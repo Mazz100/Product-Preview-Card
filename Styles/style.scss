@@ -1,0 +1,125 @@
+$price-color: hsl(158, 36%, 37%);
+$cart-svg-bg-color: hsl(158, 36%, 37%);
+
+//Remove default margins
+h1,
+h2,
+h3,
+p,
+body,
+button,
+img {
+    margin: 0;
+}
+
+
+
+@mixin FlexFunc($direction) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+
+    background-color: hsl(30, 38%, 92%);
+
+    @include FlexFunc((column));
+    min-height: 100vh; //Maximizing content to full height viewport 
+    gap: 1.5rem;
+}
+
+// Mobile First Layout
+.container {
+    max-width: 18rem;
+}
+
+.content-image {
+    img {
+        border-top-right-radius: 8px;
+        border-top-left-radius: 8px;
+
+        //Set max width and height to fit container
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.content-text {
+    @include FlexFunc(column);
+    //align-items: flex-start;
+
+    background-color: white;
+    padding: 16px;
+    margin-top: -5px;
+    font-size: 0.875rem;
+
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+
+    //header style
+    hgroup {
+        .RibbonText {
+            color: gray;
+            font-size: 0.625rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 10px;
+
+        }
+
+        h2 {
+            font-family: 'Fraunces', serif;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+    }
+
+    .Description {
+        color: gray;
+        line-height: 20px;
+    }
+
+    .price-main {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        margin-right: auto;
+
+        span {
+            font-family: 'Fraunces', serif;
+            font-size: 1.5rem;
+            padding-right: 10px;
+            color: $price-color;
+        }
+
+        s {
+            color: gray;
+            margin-bottom: 10px;
+        }
+    }
+
+
+    .btn-product-card {
+        @include FlexFunc(row);
+        background-color: $cart-svg-bg-color;
+        font-weight: 700;
+        font-size: 0.75rem;
+        padding: 10px;
+        border: none;
+        border-radius: 8px;
+        margin-top: 10px;
+        width: 95%;
+
+        span {
+            color: white;
+            padding-left: 10px;
+
+        }
+
+
+
+    }
+
+}

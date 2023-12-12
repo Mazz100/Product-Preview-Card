@@ -8,14 +8,25 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="">
+
   <!-- Google Font Links-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <!--Montserrat Font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap" rel="stylesheet">
+  <!--Fraunces Font-->
+
+  <link rel="stylesheet" href="Styles/style.css">
 
   <title>Frontend Mentor | Product preview card component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution {
-      font-size: 11px;
+      font-size: 0.75rem;
       text-align: center;
     }
 
@@ -47,15 +58,18 @@
         <p class="Description"> A floral, solar and voluptuous interpretation composed by Olivier Polge,
           Perfumer-Creator for the House of CHANEL.</p>
 
-        <p>
-          <span class="newPrice">$149.99</span>
+        <p class="price-main">
+          <span class="price">$149.99</span>
           <s class="oldPrice"> $169.99</s>
         </p>
 
-        <img src="/images/icon-cart.svg" alt="">
-        <button class="btn-addtocart">Add to Cart</button>
+        <button type="button" class="btn-product-card">
+          <img src="images/icon-cart.svg" alt="">
+          <span> Add to Cart</span>
+        </button>
+      </div>
     </main>
-  </div>
+
   </div>
 
   <footer class="attribution">
