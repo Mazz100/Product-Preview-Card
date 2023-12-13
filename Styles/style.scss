@@ -17,7 +17,6 @@ img {
     box-sizing: border-box;
 }
 
-
 @mixin FlexFunc($direction) {
     display: flex;
     flex-direction: $direction;
@@ -50,15 +49,13 @@ body {
 
     @include FlexFunc((column));
     min-height: 100vh; //Maximizing content to full height viewport 
-    gap: 1.5rem;
+
 
     @media (min-width: 700px) {
 
-
-
         .container {
             @include GridFun();
-            max-width: 30rem;
+            max-width: 36rem;
 
         }
 
@@ -69,13 +66,14 @@ body {
                 border-top-right-radius: 0;
                 border-top-left-radius: 8px;
                 border-bottom-left-radius: 8px;
+
             }
         }
 
         .content-text {
             grid-area: 1/2/2/2;
-            justify-content: space-between;
-            padding: 20px;
+            justify-content: space-evenly;
+            padding: 32px;
             margin: 0;
 
             border-bottom-right-radius: 8px;
@@ -87,9 +85,20 @@ body {
     }
 }
 
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
 // Mobile First Layout
 .container {
-    max-width: 18rem;
+    max-width: 22rem;
+
+    flex: 1;
+    display: flex;
+    align-items: center;
+
 }
 
 .content-image {
@@ -108,7 +117,7 @@ body {
 
 
     background-color: white;
-    padding: 16px;
+    padding: 24px;
     margin-top: -5px;
     font-size: 0.875rem;
 
@@ -129,7 +138,7 @@ body {
 
         h2 {
             font-family: 'Fraunces', serif;
-            font-size: 1.75rem;
+            font-size: 2rem;
             text-align: left;
             margin-bottom: 16px;
             font-weight: 700;
@@ -149,7 +158,7 @@ body {
 
         span {
             font-family: 'Fraunces', serif;
-            font-size: 1.5rem;
+            font-size: 2rem;
             padding-right: 10px;
             color: $price-color;
         }
@@ -166,7 +175,7 @@ body {
         background-color: $cart-svg-bg-color;
         font-weight: 700;
         font-size: 0.75rem;
-        padding: 10px;
+        padding: 12px;
         border: none;
         border-radius: 8px;
         margin-top: 10px;
@@ -188,9 +197,19 @@ body {
         background-color: hsl(158, 36%, 23%);
         animation-name: hoverEffect;
         animation-duration: 0.7s;
-        
+
     }
 
+}
 
+.attribution {
+    padding: 10px;
+    font-size: 0.75rem;
+    text-align: center;
+
+
+    a {
+        color: hsl(228, 45%, 44%);
+    }
 
 }

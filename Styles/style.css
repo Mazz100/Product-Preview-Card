@@ -28,14 +28,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  gap: 1.5rem;
 }
 @media (min-width: 700px) {
   body .container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    max-width: 30rem;
+    max-width: 36rem;
   }
   body .content-image {
     grid-area: 1/1/1/1;
@@ -47,8 +46,8 @@ body {
   }
   body .content-text {
     grid-area: 1/2/2/2;
-    justify-content: space-between;
-    padding: 20px;
+    justify-content: space-evenly;
+    padding: 32px;
     margin: 0;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
@@ -56,8 +55,17 @@ body {
   }
 }
 
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
 .container {
-  max-width: 18rem;
+  max-width: 22rem;
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .content-image img {
@@ -73,7 +81,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: white;
-  padding: 16px;
+  padding: 24px;
   margin-top: -5px;
   font-size: 0.875rem;
   border-bottom-right-radius: 8px;
@@ -89,7 +97,7 @@ body {
 }
 .content-text hgroup h2 {
   font-family: "Fraunces", serif;
-  font-size: 1.75rem;
+  font-size: 2rem;
   text-align: left;
   margin-bottom: 16px;
   font-weight: 700;
@@ -106,7 +114,7 @@ body {
 }
 .content-text .price-main span {
   font-family: "Fraunces", serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
   padding-right: 10px;
   color: hsl(158, 36%, 37%);
 }
@@ -122,7 +130,7 @@ body {
   background-color: hsl(158, 36%, 37%);
   font-weight: 700;
   font-size: 0.75rem;
-  padding: 10px;
+  padding: 12px;
   border: none;
   border-radius: 8px;
   margin-top: 10px;
@@ -137,4 +145,13 @@ body {
   background-color: hsl(158, 36%, 23%);
   animation-name: hoverEffect;
   animation-duration: 0.7s;
+}
+
+.attribution {
+  padding: 10px;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
 }/*# sourceMappingURL=style.css.map */
