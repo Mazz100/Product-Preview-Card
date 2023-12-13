@@ -12,6 +12,10 @@ img {
     margin: 0;
 }
 
+//Apply box sizing
+*::before *::after {
+    box-sizing: border-box;
+}
 
 
 @mixin FlexFunc($direction) {
@@ -21,6 +25,24 @@ img {
     align-items: center;
 }
 
+@mixin GridFun() {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+
+}
+
+@keyframes hoverEffect {
+    0% {
+        background-color: hsla(158, 36%, 23%, 0.8);
+    }
+
+    100% {
+        background-color: hsla(158, 36%, 23%, 1);
+    }
+}
+
+
 body {
     font-family: 'Montserrat', sans-serif;
 
@@ -29,6 +51,40 @@ body {
     @include FlexFunc((column));
     min-height: 100vh; //Maximizing content to full height viewport 
     gap: 1.5rem;
+
+    @media (min-width: 700px) {
+
+
+
+        .container {
+            @include GridFun();
+            max-width: 30rem;
+
+        }
+
+        .content-image {
+            grid-area: 1/1/1/1;
+
+            img {
+                border-top-right-radius: 0;
+                border-top-left-radius: 8px;
+                border-bottom-left-radius: 8px;
+            }
+        }
+
+        .content-text {
+            grid-area: 1/2/2/2;
+            justify-content: space-between;
+            padding: 20px;
+            margin: 0;
+
+            border-bottom-right-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom-left-radius: 0;
+        }
+
+
+    }
 }
 
 // Mobile First Layout
@@ -49,7 +105,7 @@ body {
 
 .content-text {
     @include FlexFunc(column);
-    //align-items: flex-start;
+
 
     background-color: white;
     padding: 16px;
@@ -65,6 +121,7 @@ body {
             color: gray;
             font-size: 0.625rem;
             text-transform: uppercase;
+            text-align: left;
             letter-spacing: 4px;
             margin-bottom: 10px;
 
@@ -72,7 +129,9 @@ body {
 
         h2 {
             font-family: 'Fraunces', serif;
-            margin-bottom: 10px;
+            font-size: 1.75rem;
+            text-align: left;
+            margin-bottom: 16px;
             font-weight: 700;
         }
     }
@@ -80,6 +139,7 @@ body {
     .Description {
         color: gray;
         line-height: 20px;
+        text-align: left;
     }
 
     .price-main {
@@ -112,14 +172,25 @@ body {
         margin-top: 10px;
         width: 95%;
 
+
+
         span {
             color: white;
             padding-left: 10px;
 
         }
 
-
-
     }
+
+    //Active state
+    .btn-product-card:hover {
+        cursor: pointer;
+        background-color: hsl(158, 36%, 23%);
+        animation-name: hoverEffect;
+        animation-duration: 0.7s;
+        
+    }
+
+
 
 }
