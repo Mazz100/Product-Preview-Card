@@ -63,9 +63,6 @@ main {
 
 .container {
   max-width: 22rem;
-  flex: 1;
-  display: flex;
-  align-items: center;
 }
 
 .content-image img {
